@@ -2,6 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
+/*
 var removeDuplicates = function(nums) {
        
    // because the array is non-descending we know the first element is the beginning of our ascent up, and will never be modified
@@ -20,6 +21,20 @@ var removeDuplicates = function(nums) {
    }
    return uniqueElements;
 };
+*/
+/*** Internet solution, a little more elegant */
+var removeDuplicates = function(nums) {
+    // equivalent to indexCurrentNum above. Also the value (i+1) is the number of unique elements, so we don't even need a separate variable called uniqueElements
+    let i = 0; 
+    for(let j = 1; j < nums.length; j++) {
+        // here we don't even need to check if greater than, only if it's not equal because we know its sorted already
+        if(nums[i] !== nums[j]) {
+            i++;
+            nums[i] = nums[j];
+        }
+    }
+    return i +1; // as mentioned above, number of unique elements is just i + 1
+ };
 
 /* Complexity:
     Time Complexity: Since we only traverse the array once, the time complexity is O(n)

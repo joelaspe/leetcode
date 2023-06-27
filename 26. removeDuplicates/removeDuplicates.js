@@ -35,8 +35,15 @@ var removeDuplicates = function(nums) {
     }
     return i +1; // as mentioned above, number of unique elements is just i + 1
  };
+/* Intuition:
 
-/* Complexity:
+The problem requires us to remove duplicate elements from a sorted array, i.e., we need to keep only one copy of each element in the array. Since the array is sorted, all duplicate elements will be adjacent to each other, so we can easily remove them by shifting the subsequent elements of the array to the left.
+
+Approach:
+
+We can use two pointers i and j, where i points to the last unique element found so far, and j points to the current element being examined. If nums[i] and nums[j] are equal, we just increment j. Otherwise, we increment i and copy nums[j] to nums[i]. At the end, we return i+1, which represents the length of the modified array.
+
+Complexity:
     Time Complexity: Since we only traverse the array once, the time complexity is O(n)
     Space complexity: The algorithm uses constant extra space, so O(1)
 */
@@ -57,7 +64,7 @@ console.log(`array 3 should be [-10,-9,-5,0,2,3,5,_,_,_] and it is actually ${ar
 console.log(`output 3 should be 7 it is actually ${output3}`);
 console.log(output3); //=> ;
 
-const array4 = [1];
+let array4 = [1];
 const output4 = removeDuplicates(array4);
 console.log(`array 4 should be [1] and it is actually ${array4}`);
 console.log(`output 4 should be 1 it is actually ${output4}`);

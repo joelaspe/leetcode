@@ -46,3 +46,16 @@ int main()
     
     return 0;
 }
+
+/* Intuition:
+
+The problem requires us to remove duplicate elements from a sorted array, i.e., we need to keep only one copy of each element in the array. Since the array is sorted, all duplicate elements will be adjacent to each other, so we can easily remove them by shifting the subsequent elements of the array to the left.
+
+Approach:
+
+We can use two pointers i and j, where i points to the last unique element found so far, and j points to the current element being examined. If nums[i] and nums[j] are equal, we just increment j. Otherwise, we increment i and copy nums[j] to nums[i]. At the end, we return i+1, which represents the length of the modified array.
+
+Complexity:
+    Time Complexity: Since we only traverse the array once, the time complexity is O(n)
+    Space complexity: The algorithm uses constant extra space, so O(1)
+*/

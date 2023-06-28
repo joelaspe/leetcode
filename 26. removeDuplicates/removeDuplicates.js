@@ -46,7 +46,9 @@ We can use two pointers i and j, where i points to the last unique element found
 Complexity:
     Time Complexity: Since we only traverse the array once, the time complexity is O(n)
     Space complexity: The algorithm uses constant extra space, so O(1)
+
 */
+
 
 let array1 = [1,1,2];
 const output1 = removeDuplicates(array1);

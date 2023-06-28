@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 
 int removeDuplicates(int* nums, int numsSize){
     int i = 0;
@@ -20,6 +21,7 @@ void printArray(int* array, int arraySize) {
 
 int main()
 {
+
     int array1[] = {1,1,2};
     const int output1 = removeDuplicates(array1, 3);
     printf("Array 1 should be 1,2,_ \n");
@@ -43,8 +45,7 @@ int main()
     printf("array4 should be 1\n");
     printArray(array4, 1);
     printf("output4 should be 1 it is actually %d\n", output4);
-    
-    return 0;
+
 }
 
 /* Intuition:

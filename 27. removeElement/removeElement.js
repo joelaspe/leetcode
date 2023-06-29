@@ -3,11 +3,10 @@
  * @param {number} val
  * @return {number}
  */
-var removeElement = function(nums, val) {
 
+var removeElement = function(nums, val) {
     let j = nums.length-1;
     for(let i = 0; i <= j; i++) {
-        
         if(nums[i] === val) {
             nums[i] = nums[j];
             nums[j] = undefined;
@@ -17,15 +16,24 @@ var removeElement = function(nums, val) {
     }
     // return the position of j + 1 which is the number of times that no match to val was found
     return j + 1;
-};
+}; 
 
 /* Intuition:
 
-The problem requies us to remove elements from the array that match a given input. We will leave anything in the array that does not conform to the input val. Additionally when an element is removed due to matching the input val, the space it filled is to be filled with something else that is valid. 
+The intuition behind this solution is to iterate through the array and keep track of two pointers i and j. Each pointer will be put at opposite ends of the array. We will iterate through the array from left to right using i as the iterator. If the value at i matches the target value, then we will put the value at j into that position, then we effective "remove" the target value by removing the value at j. This is an indirect way of viewing the removal. Finally decrement both counters and go back through the loop again. We decrement i in this case because it is possible that the next value at j could match the value again. Stop the incrementing when j < i. Return j + 1 as the number of non-matching values.
 
 Approach:
 
-We can use two pointers i and j, where i points to the current element being looked at and also is used as the tracker for the number of elements that do not equal to val (actually i + 1). j will start at the end of the array. Start by looking at nums[i], if it matches val, then look at nums[j]. If nums[j] also matches val, then move j to the left by one. Then do the comparison again. Once a nums[j] is found that is acceptable (not equal to val) then set nums[i] = nums[j] then increment (move to the right) i by one. Do this until we reach j = nums.length
+1. Initialize `j` to be `nums.length-1`.
+2. Iterate through each element of the input array using the `i` pointer.
+3. For each element `num[i]` check if it is equal to the target value.
+- If `nums[i]` is equal to `val`, it is a target element
+  -Set `nums[i]` equal to `nums[j]` to store the non-target element at the target element
+  -Decrement `j` by one
+  -Decrement `i` by one
+4. Continue this process until j is less than i.
+5. Return j + 1, as this will represent the total number of non-target elements
+
 
 Complexity:
     Time Complexity: Since we only traverse the array once, the time complexity is O(n)

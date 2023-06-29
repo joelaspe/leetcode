@@ -8,7 +8,6 @@ int removeElement(int* nums, int numsSize, int val){
             nums[j] = NULL;
             i--;
             j--;
-
         }
     }
     return j + 1;
@@ -76,7 +75,6 @@ int main(void) {
     printArray(array4, 1);
     printf("output4 should be 0 it is actually %d\n", output4);
 
-    //int* array5 = {};
     int array5[] = {}; // empty array case
     int val5 = 0;
     int output5 = removeElement(array5, 0, val5);

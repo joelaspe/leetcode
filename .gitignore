@@ -1,5 +1,8 @@
+./.vscode
+.vscode
 removeDuplicates_C
 removeDuplicates_CPP
 Solution.class
 removeElement_C
 removeElement_CPP
+getConcatenation_C

@@ -18,6 +18,7 @@ public:
     }
 };
 
+
 /* Intuition:
 
 The intuition behind this solution is to iterate through the array and keep track of two pointers i and j. Each pointer will be put at opposite ends of the array. We will iterate through the array from left to right using i as the iterator. If the value at i matches the target value, then we will put the value at j into that position, then we effective "remove" the target value by removing the value at j. This is an indirect way of viewing the removal. Finally decrement both counters and go back through the loop again. We decrement i in this case because it is possible that the next value at j could match the value again. Stop the incrementing when j < i. Return j + 1 as the number of non-matching values.

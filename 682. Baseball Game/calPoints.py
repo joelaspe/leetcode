@@ -1,21 +1,35 @@
-class Solution(object):
-    def calPoints(self, operations):
-        """
-        :type operations: List[str]
-        :rtype: int
-        """
+from typing import List
+#class Solution:
+ #   def calPoints(self, operations: List[str]) -> int:
+    #    scoreArray = []
+    #    for input in operations:
+    #        match input:
+    #            case "+":
+    #                scoreArray.append(scoreArray[len(scoreArray)-2] + scoreArray[len(scoreArray) - 1])
+    #            case "C":
+    #                scoreArray.pop()
+    #            case "D":
+    #                scoreArray.append(scoreArray[len(scoreArray)-1] * 2)
+    #            case _:
+    #                scoreArray.append(int(input));
+    #    return sum(scoreArray)
+    
+#internet solution -- uses property of arrays to get index at last element and second to last. cuts down on unnecssary characters
+class Solution:
+    def calPoints(self, operations: List[str]) -> int:
         scoreArray = []
         for input in operations:
             match input:
                 case "+":
-                    scoreArray.append(scoreArray[len(scoreArray)-2] + scoreArray[len(scoreArray) - 1])
+                    scoreArray.append(scoreArray[-2] + scoreArray[-1])
                 case "C":
                     scoreArray.pop()
                 case "D":
-                    scoreArray.append(scoreArray[len(scoreArray)-1] * 2)
+                    scoreArray.append(scoreArray[-1] * 2)
                 case _:
                     scoreArray.append(int(input));
         return sum(scoreArray)
+
 
 # Intuition: The problem wants us to create a record that is empty at the beginning of the game. We will store this in an array of numbers []. We will iterate through the input array and on each element check what the operation is. Since the constraints are that there will be at least 2 elements for a + operation and at least 1 element for both C and D operation, we will not have to worry about edge cases. The operations that occur will always deal with the last element of our score array so pop() and push() like operations will be sufficient. At the end, add up the scores and return them.
 

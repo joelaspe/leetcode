@@ -1,0 +1,12 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "isValid_CPP",
+      "isValid.cpp"
+    ],
+    "directory": "/home/krantkiller/github/leetcode/20. Valid Parentheses",
+    "file": "/home/krantkiller/github/leetcode/20. Valid Parentheses/isValid.cpp"
+  }
+]

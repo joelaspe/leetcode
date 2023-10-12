@@ -81,7 +81,7 @@ Because the problem statement is that all functions must have time complexity of
 
 Complexity: 
 -Time: Operations like getMin() are $$O(1)$$. push() and pop() are generally $$O(1)$$ unless they require reallocation of memory, in which case it will be $$O(n)$$ where n is the current size of the array. 
--Space: The main stack is initially declared as able to store can be as large -2^31 to 2^31 so this is a signed long int. The max number of calls is 3 * 10^4 so this is $$O(N)$$ or 960,000 bits or 120,000 byes of memory allocated.*/
+-Space: The main stack is initially declared as able to store can be as large -2^31 to 2^31 so this is a signed long int. We also have a second stack that maintains the minimum number. This is $$O(2n)$$ or $$O(n)$$*/
 
 
 int main() {

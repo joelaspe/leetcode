@@ -119,6 +119,7 @@ Complexity:
 
 
 var mergeTwoLists = function (l1, l2) {
+    
     if (!l1) return l2;
     else if (!l2) return l1;
     else if (l1.val <= l2.val) {
@@ -129,10 +130,6 @@ var mergeTwoLists = function (l1, l2) {
         return l2
     }
 };
-
-
-
-
 
 
 
@@ -174,4 +171,11 @@ node2a = new ListNode(0);
 let mergedList3 = mergeTwoLists(node1a, node2a);
 console.log("Expecting [0] got ");
 printMergedLists(mergedList3);
+
+node1a = new ListNode(1);
+node2a = new ListNode(1);
+
+let mergedList4 = mergeTwoLists(node1a, node2a);
+console.log("Expecting [1,1] got ");
+printMergedLists(mergedList4);
 

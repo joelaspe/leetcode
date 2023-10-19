@@ -62,7 +62,7 @@ MinStack.prototype.getMin = function() {
  */
 
 
-/** Internet solution gave me a hint to imporove, is better as a whole object is pushed onto one array, so we don't need 2 arrays and the additional min size tracker. */
+/** Internet solution gave me a hint to improve, is better as a whole object is pushed onto one array, so we don't need 2 arrays and the additional min size tracker. */
 
 
 var MinStack = function() {
@@ -107,7 +107,7 @@ MinStack.prototype.getMin = function() {
 
 Approach: In the constructor function, We will use a array to act as our stack. Because our array will not shrink when we pop from it, we will use another variable to track how many active elements are in the stack. (.length property will not work as the array will not shrink)
 Next in the push() method, we will add onto the next element available of the array an object {value: val, min: <logic to calculate current minimum} and then increment the stackSize counter.
-On to the pop() method, we simply set the last element in the array to null and decrement the stackSize counter. 
+On to the pop() method, we simply decrement the stackSize counter ignoring the elements in the stack array. 
 The top() method is also simple, it simply returns the value of the last element.
 getMin() is also simple, just return the value being stored in the object, that is the last element of this.min;
 

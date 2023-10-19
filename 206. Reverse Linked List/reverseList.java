@@ -70,3 +70,10 @@
     }
 }
 
+/* Intuition: We must reverse the list given the head which is a ListNode passed in. We can use three variables to track previous, current and next nodes. The head will automatically become the tail, so first we will grab a point to the next Node, and then set the next parameter to null. We will keep track of this node as the previous node. Moving on to the next Node, we will get the next Node again, and then set the next parameter and so on and so on. Eventually we will get to the end, see that there is no more nodes and then stop.
+
+Approach: We declare a variable currentNode that is set immediately to the input head. We declare another variable prevNode to store the previous node which will accept the pointer of the currentNode. Finally we have a third variable nextNode to track which is the next node to move onto. First we set prevNode to currentNode, currentNode to currentNode.next, nextNode equal to currentNode.next then we enter our loop, the condition of the loop will be while the currentNode is not equal to null. Set the previous node to currentNode, currentNode to NextNode, and currentNode.next to prevNode which is what actually reverses the linked list. Repeat the loop. Once the last node is read we break from the loop and return prevNode.
+
+Complexity: 
+-Time: It is a simple traversal that depends solely on the linked list size so $$O(n)$$
+-Space: The linked list is reversed in place, no extra space is required so $$O(n)$$ */
